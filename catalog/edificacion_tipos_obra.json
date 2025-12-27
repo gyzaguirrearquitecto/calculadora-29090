@@ -1,0 +1,47 @@
+[
+  {
+    "code": "ED-NUE",
+    "label": "Edificación nueva",
+    "valor_metodo": "VUOE (Valores Unitarios Oficiales de Edificación)"
+  },
+  {
+    "code": "ED-AMP",
+    "label": "Ampliación",
+    "valor_metodo": "VUOE (Valores Unitarios Oficiales de Edificación)"
+  },
+  {
+    "code": "ED-REM",
+    "label": "Remodelación",
+    "valor_metodo": "Presupuesto estimado"
+  },
+  {
+    "code": "ED-REF",
+    "label": "Refacción",
+    "valor_metodo": "Presupuesto estimado"
+  },
+  {
+    "code": "ED-ACO",
+    "label": "Acondicionamiento",
+    "valor_metodo": "Presupuesto estimado"
+  },
+  {
+    "code": "ED-PUV",
+    "label": "Puesta en valor",
+    "valor_metodo": "Presupuesto estimado"
+  },
+  {
+    "code": "ED-CER",
+    "label": "Cercado",
+    "valor_metodo": "Presupuesto estimado (referencial)"
+  },
+  {
+    "code": "ED-DEM",
+    "label": "Demolición",
+    "valor_metodo": "VUOE con depreciación por antigüedad/estado"
+  },
+  {
+    "code": "ED-OTH",
+    "label": "Otros",
+    "valor_metodo": "Definir caso / sustento"
+  }
+]

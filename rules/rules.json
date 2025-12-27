@@ -1,0 +1,74 @@
+{
+  "version": "0.1",
+  "notes": "Reglas iniciales (plantilla editable). La determinación normativa final de modalidad requiere parámetros adicionales del proyecto y verificación con el reglamento vigente.",
+  "edificacion": {
+    "ED-NUE": {
+      "valor_metodo": "VUOE (Valores Unitarios Oficiales de Edificación)"
+    },
+    "ED-AMP": {
+      "valor_metodo": "VUOE (Valores Unitarios Oficiales de Edificación)"
+    },
+    "ED-REM": {
+      "valor_metodo": "Presupuesto estimado"
+    },
+    "ED-REF": {
+      "valor_metodo": "Presupuesto estimado"
+    },
+    "ED-ACO": {
+      "valor_metodo": "Presupuesto estimado"
+    },
+    "ED-PUV": {
+      "valor_metodo": "Presupuesto estimado"
+    },
+    "ED-CER": {
+      "valor_metodo": "Presupuesto estimado (referencial)"
+    },
+    "ED-DEM": {
+      "valor_metodo": "VUOE con depreciación por antigüedad/estado"
+    },
+    "ED-OTH": {
+      "valor_metodo": "Definir caso / sustento"
+    }
+  },
+  "habilitacion": {
+    "HU-VIV-CONV": {
+      "observaciones": "Completar reglas de modalidad según condiciones (área, afectaciones, plan vial, etc.)."
+    },
+    "HU-VIV-SIM": {
+      "observaciones": "Completar reglas de modalidad según condiciones (área, afectaciones, plan vial, etc.)."
+    },
+    "HU-VIV-VGL": {
+      "observaciones": "Completar reglas de modalidad según condiciones (área, afectaciones, plan vial, etc.)."
+    },
+    "HU-VIV-VVE": {
+      "observaciones": "Completar reglas de modalidad según condiciones (área, afectaciones, plan vial, etc.)."
+    },
+    "HU-COM": {
+      "observaciones": "Completar reglas de modalidad según condiciones (área, afectaciones, plan vial, etc.)."
+    },
+    "HU-IND": {
+      "observaciones": "Completar reglas de modalidad según condiciones (área, afectaciones, plan vial, etc.)."
+    },
+    "HU-ESP": {
+      "observaciones": "Completar reglas de modalidad según condiciones (área, afectaciones, plan vial, etc.)."
+    },
+    "HU-ETAP": {
+      "observaciones": "Completar reglas de modalidad según condiciones (área, afectaciones, plan vial, etc.)."
+    },
+    "HU-VAC": {
+      "observaciones": "Completar reglas de modalidad según condiciones (área, afectaciones, plan vial, etc.)."
+    },
+    "HU-RIB": {
+      "observaciones": "Completar reglas de modalidad según condiciones (área, afectaciones, plan vial, etc.)."
+    },
+    "HU-PROG": {
+      "observaciones": "Completar reglas de modalidad según condiciones (área, afectaciones, plan vial, etc.)."
+    },
+    "HU-REURB": {
+      "observaciones": "Completar reglas de modalidad según condiciones (área, afectaciones, plan vial, etc.)."
+    },
+    "HU-OTH": {
+      "observaciones": "Completar reglas de modalidad según condiciones (área, afectaciones, plan vial, etc.)."
+    }
+  }
+}

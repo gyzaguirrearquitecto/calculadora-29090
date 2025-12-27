@@ -1,0 +1,26 @@
+[
+  {
+    "code": "ED-LIC",
+    "label": "Licencia de Edificación"
+  },
+  {
+    "code": "HU-LIC",
+    "label": "Licencia de Habilitación Urbana"
+  },
+  {
+    "code": "ED-CONF",
+    "label": "Conformidad de Obra y Declaratoria de Edificación"
+  },
+  {
+    "code": "HU-REC",
+    "label": "Recepción de Obras de Habilitación Urbana"
+  },
+  {
+    "code": "COMP",
+    "label": "Procedimientos complementarios"
+  },
+  {
+    "code": "SUB-IND",
+    "label": "Subdivisión / Independización (según corresponda)"
+  }
+]
