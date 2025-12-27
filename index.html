@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Calculadora 29090 – MVP</title>
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#0b1320" />
+  <link rel="icon" href="assets/icon-192.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="brand">
+      <div class="brand-title">Calculadora 29090 – MVP</div>
+      <div class="brand-sub">Catálogos + reglas editables + observatorio (demo)</div>
+    </div>
+    <nav class="tabs" role="tablist" aria-label="Secciones">
+      <button class="tab active" data-tab="calc" role="tab" aria-selected="true">Calculadora</button>
+      <button class="tab" data-tab="obs" role="tab" aria-selected="false">Licencias (Observatorio)</button>
+      <button class="tab" data-tab="admin" role="tab" aria-selected="false">Catálogos</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section id="tab-calc" class="panel active" role="tabpanel">
+      <h1>Calculadora (plantilla)</h1>
+      <p class="muted">
+        Esta versión es un MVP: estructura los tipos de procedimientos y tipologías (FUE/FUHU) y aplica reglas básicas
+        (p. ej. método para estimar valor de obra). La determinación normativa final de modalidad requiere parámetros
+        adicionales del proyecto y verificación con el reglamento vigente.
+      </p>
+
+      <div class="grid">
+        <div class="card">
+          <h2>1) Selección</h2>
+          <div class="field">
+            <label for="proc">Procedimiento</label>
+            <select id="proc"></select>
+          </div>
+
+          <div id="ed-block" class="subblock hidden">
+            <div class="field">
+              <label for="ed-obra">Tipo de obra (Edificación)</label>
+              <select id="ed-obra"></select>
+            </div>
+          </div>
+
+          <div id="hu-block" class="subblock hidden">
+            <div class="field">
+              <label for="hu-tipo">Tipo de habilitación urbana</label>
+              <select id="hu-tipo"></select>
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="area">Área estimada (m²)</label>
+              <input id="area" type="number" min="0" step="0.1" placeholder="Ej: 240.0" />
+            </div>
+            <div class="field">
+              <label for="pisos">Nº de pisos (referencial)</label>
+              <input id="pisos" type="number" min="0" step="1" placeholder="Ej: 3" />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="pres">Presupuesto estimado (S/)</label>
+            <input id="pres" type="number" min="0" step="0.01" placeholder="Solo si aplica" />
+            <div class="help">Para remodelación / refacción / acondicionamiento / puesta en valor, el FUE usa presupuesto estimado.</div>
+          </div>
+
+          <button id="btn-calc" class="primary">Calcular</button>
+        </div>
+
+        <div class="card">
+          <h2>2) Resultado</h2>
+          <div id="result" class="result">
+            <div class="muted">Selecciona un procedimiento y calcula para ver resultados.</div>
+          </div>
+          <div class="actions">
+            <button id="btn-export" class="secondary" disabled>Exportar reporte (HTML)</button>
+            <button id="btn-reset" class="ghost">Limpiar</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="tab-obs" class="panel" role="tabpanel">
+      <h1>Licencias (Observatorio – demo)</h1>
+      <p class="muted">
+        Este módulo lee un CSV (demo) y permite filtrar por desplegables. Para usar datos reales, reemplaza
+        <code>data/licencias_sample.csv</code> por un dataset normalizado con las mismas columnas.
+      </p>
+
+      <div class="card">
+        <div class="toolbar">
+          <div class="field">
+            <label for="f-distrito">Distrito</label>
+            <select id="f-distrito"></select>
+          </div>
+          <div class="field">
+            <label for="f-anio">Año</label>
+            <select id="f-anio"></select>
+          </div>
+          <div class="field">
+            <label for="f-proc">Procedimiento</label>
+            <select id="f-proc"></select>
+          </div>
+          <div class="field">
+            <label for="f-modal">Modalidad</label>
+            <select id="f-modal"></select>
+          </div>
+          <div class="field">
+            <label for="f-estado">Estado</label>
+            <select id="f-estado"></select>
+          </div>
+        </div>
+
+        <div class="kpis">
+          <div class="kpi"><div class="kpi-label">Registros</div><div id="kpi-n" class="kpi-value">–</div></div>
+          <div class="kpi"><div class="kpi-label">Aprobadas</div><div id="kpi-ap" class="kpi-value">–</div></div>
+          <div class="kpi"><div class="kpi-label">En evaluación</div><div id="kpi-ev" class="kpi-value">–</div></div>
+          <div class="kpi"><div class="kpi-label">Observadas</div><div id="kpi-ob" class="kpi-value">–</div></div>
+        </div>
+
+        <canvas id="chart" height="90"></canvas>
+
+        <div class="table-wrap">
+          <table id="tbl">
+            <thead>
+              <tr>
+                <th>ID</th><th>Distrito</th><th>Fecha</th><th>Procedimiento</th><th>Tipo</th><th>Modalidad</th><th>Estado</th><th>Área (m²)</th><th>Presupuesto (S/)</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+
+        <div class="actions">
+          <input id="file" type="file" accept=".csv" />
+          <button id="btn-download-template" class="secondary">Descargar plantilla CSV</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="tab-admin" class="panel" role="tabpanel">
+      <h1>Catálogos y reglas</h1>
+      <p class="muted">
+        Esta sección te permite revisar el catálogo cargado por la app. Para editar, modifica los archivos JSON en
+        <code>catalog/</code> y <code>rules/</code> y vuelve a desplegar.
+      </p>
+
+      <div class="grid">
+        <div class="card">
+          <h2>Procedimientos</h2>
+          <pre id="cat-proc" class="pre"></pre>
+        </div>
+        <div class="card">
+          <h2>Tipos de obra (Edificación)</h2>
+          <pre id="cat-ed" class="pre"></pre>
+        </div>
+        <div class="card">
+          <h2>Tipos (Habilitación urbana)</h2>
+          <pre id="cat-hu" class="pre"></pre>
+        </div>
+        <div class="card">
+          <h2>Reglas (plantilla)</h2>
+          <pre id="cat-rules" class="pre"></pre>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>Versión MVP – Catálogos FUE/FUHU + demo de datos</span>
+    <span id="sw-status" class="muted"></span>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
