@@ -1,0 +1,116 @@
+{
+  "soil_profiles": [
+    {
+      "id": "S0",
+      "name": "S0 (roca muy rígida)"
+    },
+    {
+      "id": "S1",
+      "name": "S1 (suelo rígido)"
+    },
+    {
+      "id": "S2",
+      "name": "S2 (suelo intermedio)"
+    },
+    {
+      "id": "S3",
+      "name": "S3 (suelo blando)"
+    },
+    {
+      "id": "S4",
+      "name": "S4 (suelo muy blando / especial)"
+    }
+  ],
+  "foundation_systems": [
+    {
+      "id": "superficial",
+      "name": "Cimentación superficial (zapatas / cimiento corrido)"
+    },
+    {
+      "id": "platea",
+      "name": "Platea / losa de cimentación"
+    },
+    {
+      "id": "profunda",
+      "name": "Cimentación profunda (pilotes / micropilotes)"
+    }
+  ],
+  "default_matrix": [
+    {
+      "soil": "S0",
+      "system": "superficial",
+      "factor": 1.0
+    },
+    {
+      "soil": "S0",
+      "system": "platea",
+      "factor": 1.05
+    },
+    {
+      "soil": "S0",
+      "system": "profunda",
+      "factor": 1.1
+    },
+    {
+      "soil": "S1",
+      "system": "superficial",
+      "factor": 1.0
+    },
+    {
+      "soil": "S1",
+      "system": "platea",
+      "factor": 1.08
+    },
+    {
+      "soil": "S1",
+      "system": "profunda",
+      "factor": 1.15
+    },
+    {
+      "soil": "S2",
+      "system": "superficial",
+      "factor": 1.05
+    },
+    {
+      "soil": "S2",
+      "system": "platea",
+      "factor": 1.12
+    },
+    {
+      "soil": "S2",
+      "system": "profunda",
+      "factor": 1.2
+    },
+    {
+      "soil": "S3",
+      "system": "superficial",
+      "factor": 1.15
+    },
+    {
+      "soil": "S3",
+      "system": "platea",
+      "factor": 1.25
+    },
+    {
+      "soil": "S3",
+      "system": "profunda",
+      "factor": 1.35
+    },
+    {
+      "soil": "S4",
+      "system": "superficial",
+      "factor": 1.3
+    },
+    {
+      "soil": "S4",
+      "system": "platea",
+      "factor": 1.4
+    },
+    {
+      "soil": "S4",
+      "system": "profunda",
+      "factor": 1.55
+    }
+  ],
+  "disclaimer": "Estimación preliminar: el factor de cimentación debe ajustarse con Estudio de Mecánica de Suelos y diseño estructural."
+}

@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Calculadora CVU + Honorarios</title>
+  <meta name="description" content="Calculadora de Valor Unitario (CVU) y Honorarios Profesionales por metraje, con guía de cobro por fases." />
+  <link rel="manifest" href="./manifest.json" />
+  <link rel="icon" href="./icons/icon-192.png" />
+  <link rel="stylesheet" href="./assets/styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="brand">
+      <div class="brand-mark">CVU</div>
+      <div class="brand-text">
+        <div class="brand-title">Calculadora CVU + Honorarios</div>
+        <div class="brand-subtitle">Lima y Callao · CVU diciembre 2025 · Honorarios por área · Cobro por fases</div>
+      </div>
+    </div>
+    <div class="header-actions">
+      <button id="btnExport" class="btn secondary" type="button">Exportar proyecto (JSON)</button>
+      <label class="btn secondary file-btn">
+        Importar
+        <input id="fileImport" type="file" accept="application/json" />
+      </label>
+      <button id="btnPrint" class="btn" type="button">Imprimir / PDF</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <div class="card-title-row">
+        <h2>1) Datos del encargo</h2>
+        <div class="muted small" id="datasetBadge">Cargando datos…</div>
+      </div>
+
+      <div class="grid grid-3">
+        <div class="field">
+          <label for="projectName">Proyecto</label>
+          <input id="projectName" type="text" placeholder="Ej. Vivienda unifamiliar - Independencia" />
+        </div>
+        <div class="field">
+          <label for="tipoObra">Tipo de obra</label>
+          <select id="tipoObra"></select>
+        </div>
+        <div class="field">
+          <label for="areaM2">Área techada (m²)</label>
+          <input id="areaM2" type="number" min="0" step="0.01" value="100" />
+        </div>
+      </div>
+
+      <div class="grid grid-3">
+        <div class="field">
+          <label for="pisos">N° de pisos</label>
+          <input id="pisos" type="number" min="1" step="1" value="2" />
+        </div>
+
+        <div class="field">
+          <label for="applyPiso5">Regla “+5% desde 5to piso”</label>
+          <select id="applyPiso5">
+            <option value="auto" selected>Automático (si pisos ≥ 5)</option>
+            <option value="on">Aplicar siempre</option>
+            <option value="off">No aplicar</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="presetClase">Preset (Clase A–I)</label>
+          <select id="presetClase">
+            <option value="C" selected>C (base)</option>
+            <option value="B">B</option>
+            <option value="A">A</option>
+            <option value="D">D</option>
+            <option value="E">E</option>
+            <option value="F">F</option>
+            <option value="G">G</option>
+            <option value="H">H</option>
+            <option value="I">I</option>
+            <option value="custom">Personalizado</option>
+          </select>
+          <div class="hint">El preset rellena columnas; luego puedes “intercalar” por partida.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="card-title-row">
+        <h2>2) CVU por partidas (S/ por m²)</h2>
+        <div class="muted small">Selecciona por columna la clase A–I. El VU es la suma de columnas.</div>
+      </div>
+
+      <div id="cvuTable" class="cvu-table" aria-live="polite"></div>
+
+      <div class="divider"></div>
+
+      <h3>2.1) Ajuste por cimentación (según suelo y sistema)</h3>
+      <div class="grid grid-4">
+        <div class="field">
+          <label for="soilProfile">Tipo de suelo (Lima)</label>
+          <select id="soilProfile"></select>
+        </div>
+        <div class="field">
+          <label for="foundationSystem">Sistema de cimentación</label>
+          <select id="foundationSystem"></select>
+        </div>
+        <div class="field">
+          <label for="foundationFactor">Factor (multiplicador)</label>
+          <input id="foundationFactor" type="number" step="0.01" min="0.50" max="2.50" value="1.00" />
+          <div class="hint">Se carga un valor sugerido; puedes ajustarlo.</div>
+        </div>
+        <div class="field">
+          <label for="foundationShare">Porción de “Muros y Columnas” atribuible a cimentación</label>
+          <input id="foundationShare" type="number" step="1" min="0" max="100" value="35" />
+          <div class="hint">% de c1 que se ajusta por suelo/cimentación.</div>
+        </div>
+      </div>
+
+      <div class="note">
+        <strong>Nota técnica:</strong> el ajuste de cimentación es un estimador; para una cotización final, debe calibrarse con EMS y el diseño estructural.
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="grid grid-3">
+        <div class="kpi">
+          <div class="kpi-label">VU base (sin ajustes)</div>
+          <div class="kpi-value" id="vuBase">—</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-label">VU final (con ajustes)</div>
+          <div class="kpi-value" id="vuFinal">—</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-label">Costo estimado de obra</div>
+          <div class="kpi-value" id="costoObra">—</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="card-title-row">
+        <h2>3) Honorarios profesionales (según área)</h2>
+        <div class="muted small">Calcula honorarios como % del costo estimado de obra.</div>
+      </div>
+
+      <div class="grid grid-4">
+        <div class="field">
+          <label for="costoBaseManual">Costo base de obra (S/)</label>
+          <input id="costoBaseManual" type="number" min="0" step="0.01" />
+          <div class="hint">Por defecto se toma del CVU. Puedes editarlo.</div>
+        </div>
+        <div class="field">
+          <label for="honPct">Porcentaje por metraje</label>
+          <input id="honPct" type="text" readonly />
+          <div class="hint" id="honBand">—</div>
+        </div>
+        <div class="field">
+          <label for="complexityFactor">Factor de complejidad</label>
+          <select id="complexityFactor">
+            <option value="0.90">0.90 (muy simple)</option>
+            <option value="1.00" selected>1.00 (estándar)</option>
+            <option value="1.15">1.15 (complejo)</option>
+            <option value="1.30">1.30 (alta complejidad)</option>
+          </select>
+        </div>
+        <div class="kpi">
+          <div class="kpi-label">Honorario total</div>
+          <div class="kpi-value" id="honTotal">—</div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <h3>3.1) Cobro parcial / total por fases</h3>
+      <div class="grid grid-2">
+        <div>
+          <div id="phaseList" class="phase-list"></div>
+        </div>
+        <div>
+          <div class="kpi">
+            <div class="kpi-label">Total seleccionado</div>
+            <div class="kpi-value" id="honSelected">—</div>
+            <div class="muted small" id="pctSelected">—</div>
+          </div>
+          <div class="note">
+            Sugerencia operativa: usa “Programación” como pago de arranque; cierra “Proyecto base” antes de iniciar trámites; y condiciona “Dirección” al inicio de obra.
+          </div>
+          <button id="btnProposal" class="btn" type="button">Generar propuesta imprimible</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="card-title-row">
+        <h2>4) Guardado rápido</h2>
+        <div class="muted small">Se guarda automáticamente en tu navegador (localStorage).</div>
+      </div>
+      <div class="grid grid-3">
+        <button id="btnSave" class="btn secondary" type="button">Guardar ahora</button>
+        <button id="btnReset" class="btn danger" type="button">Restablecer</button>
+        <div class="muted small" id="saveStatus">—</div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="muted small">
+        App estática para GitHub Pages. Datos: CVU Lima/Callao (diciembre 2025) + cuadro de honorarios (por área) + guía de cobro por fases.
+      </div>
+    </footer>
+  </main>
+
+  <script src="./assets/utils.js"></script>
+  <script src="./assets/app.js"></script>
+</body>
+</html>

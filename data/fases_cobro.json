@@ -1,0 +1,65 @@
+{
+  "phases": [
+    {
+      "id": "prog",
+      "group": "Programación",
+      "name": "Programación",
+      "pct": 10
+    },
+    {
+      "id": "ap_est",
+      "group": "Anteproyecto",
+      "name": "Estudio previo",
+      "pct": 5
+    },
+    {
+      "id": "ap",
+      "group": "Anteproyecto",
+      "name": "Anteproyecto",
+      "pct": 20
+    },
+    {
+      "id": "ap_def",
+      "group": "Anteproyecto",
+      "name": "Anteproyecto definitivo",
+      "pct": 10
+    },
+    {
+      "id": "pr_base",
+      "group": "Proyecto",
+      "name": "Proyecto base",
+      "pct": 20
+    },
+    {
+      "id": "pr_ejec",
+      "group": "Proyecto",
+      "name": "Proyecto ejecución de obra",
+      "pct": 10
+    },
+    {
+      "id": "pr_esp",
+      "group": "Proyecto",
+      "name": "Especificación técnica",
+      "pct": 5
+    },
+    {
+      "id": "coord",
+      "group": "Gestión",
+      "name": "Coordinación proyecto integral",
+      "pct": 6
+    },
+    {
+      "id": "metr",
+      "group": "Gestión",
+      "name": "Metrado y presupuesto",
+      "pct": 4
+    },
+    {
+      "id": "dir",
+      "group": "Obra",
+      "name": "Dirección arquitectónica",
+      "pct": 10
+    }
+  ],
+  "total_pct": 100
+}

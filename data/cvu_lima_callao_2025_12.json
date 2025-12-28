@@ -1,0 +1,296 @@
+{
+  "dataset_id": "CVU_LIMA_CALLAO_2025_12",
+  "title": "Cuadro de Valores Unitarios Oficiales de Edificaciones (Lima Metropolitana y Callao)",
+  "valid_from": "2025-12-01",
+  "valid_to": "2025-12-31",
+  "currency": "PEN",
+  "unit": "PEN/m2",
+  "meta": {
+    "resolution_directoral": "00011-2024-VIVIENDA/VMVU-DGPRVU (20-12-2024)",
+    "resolution_inei": "235-2025-INEI (01-11-2025)",
+    "ipc_nov_2025": "1.26%",
+    "ipc_factor": 1.0126,
+    "notes": [
+      "Valores por partidas en nuevos soles por metro cuadrado de área techada.",
+      "En edificios aumentar el valor por m2 en 5% a partir del 5to piso.",
+      "El valor unitario por m2 se obtiene sumando los valores seleccionados de cada una de las 7 columnas del cuadro."
+    ]
+  },
+  "columns": [
+    {
+      "id": "c1",
+      "name": "Muros y Columnas",
+      "group": "Estructuras"
+    },
+    {
+      "id": "c2",
+      "name": "Techos",
+      "group": "Estructuras"
+    },
+    {
+      "id": "c3",
+      "name": "Pisos",
+      "group": "Acabados"
+    },
+    {
+      "id": "c4",
+      "name": "Puertas y Ventanas",
+      "group": "Acabados"
+    },
+    {
+      "id": "c5",
+      "name": "Revestimientos",
+      "group": "Acabados"
+    },
+    {
+      "id": "c6",
+      "name": "Baños",
+      "group": "Acabados"
+    },
+    {
+      "id": "c7",
+      "name": "Instalaciones eléctricas y sanitarias",
+      "group": "Instalaciones"
+    }
+  ],
+  "categories": [
+    {
+      "key": "A",
+      "label": "A",
+      "values": {
+        "c1": 649.56,
+        "c2": 394.53,
+        "c3": 348.42,
+        "c4": 352.52,
+        "c5": 379.97,
+        "c6": 128.22,
+        "c7": 376.82
+      },
+      "descriptions": {
+        "c1": "Estructuras laminares curvadas de concreto armado que incluyen una sola armadura, la cimentación y el techo; para este caso no se considera los valores de la columna N°2.",
+        "c2": "Losa o aligerado de concreto armado con luces mayores de 6 m, con sobrecarga mayor a 300 kg/m².",
+        "c3": "Mármol importado, piedras naturales importadas, porcelanato.",
+        "c4": "Aluminio con perfiles especiales. Madera fina ornamentada (caoba, cedro o pino selecto). Vidrio insulado (1).",
+        "c5": "Mármol importado, madera fina (caoba o similar), baldosa acústica en techo o similar.",
+        "c6": "Baños completos (7) de lujo importado con enchape fino (mármol o similar).",
+        "c7": "Aire acondicionado, iluminación especial, ventilación forzada, sist. hidroneumático, agua caliente y fría, intercomunicador, alarmas, ascensor, sist. de bombeo de agua y desagüe (5), teléfono, gas natural."
+      },
+      "rules": {
+        "exclude_columns_if_selected": {
+          "c1": [
+            "c2"
+          ]
+        },
+        "rule_notes": [
+          "Si seleccionas A en Muros y Columnas (c1), el techo está incluido: no sumar Techos (c2)."
+        ]
+      }
+    },
+    {
+      "key": "B",
+      "label": "B",
+      "values": {
+        "c1": 418.8,
+        "c2": 257.4,
+        "c3": 208.83,
+        "c4": 185.81,
+        "c5": 287.88,
+        "c6": 97.49,
+        "c7": 275.13
+      },
+      "descriptions": {
+        "c1": "Columnas, vigas y/o placas de concreto armado y/o metálicas.",
+        "c2": "Aligerados o losas de concreto armado inclinadas.",
+        "c3": "Mármol nacional o reconstituido, parquet fino (olivo, chonta o similar), cerámica importada, madera fina.",
+        "c4": "Aluminio o madera fina (caoba o similar) de diseño especial; vidrio tratado polarizado (2) curvado, laminado o templado.",
+        "c5": "Mármol nacional, madera fina (caoba o similar), enchapes en techos.",
+        "c6": "Baños completos (7) importados con mayólica o cerámico decorativo importado.",
+        "c7": "Sistemas de bombeo de agua potable (5), ascensor, teléfono, agua caliente y fría, gas natural."
+      }
+    },
+    {
+      "key": "C",
+      "label": "C",
+      "values": {
+        "c1": 288.29,
+        "c2": 212.66,
+        "c3": 137.44,
+        "c4": 120.09,
+        "c5": 213.57,
+        "c6": 67.63,
+        "c7": 173.57
+      },
+      "descriptions": {
+        "c1": "Placas de concreto (e=10 a 15 cm), albañilería armada, ladrillo similar con columna y vigas de amarre de concreto armado.",
+        "c2": "Aligerado o losas de concreto armado horizontales.",
+        "c3": "Madera fina machihembrada, terrazo.",
+        "c4": "Aluminio o madera fina (caoba o similar), vidrio tratado polarizado (2), laminado o templado.",
+        "c5": "Superficie caravista o entablado mediante encofrado especial, enchape en techos.",
+        "c6": "Baños completos (7) nacionales con mayólica o cerámico nacional de color.",
+        "c7": "Igual al punto “B” sin ascensor."
+      }
+    },
+    {
+      "key": "D",
+      "label": "D",
+      "values": {
+        "c1": 278.79,
+        "c2": 140.83,
+        "c3": 121.24,
+        "c4": 105.2,
+        "c5": 163.86,
+        "c6": 36.08,
+        "c7": 109.64
+      },
+      "descriptions": {
+        "c1": "Ladrillo o similar sin elementos de concreto armado. Drywall o similar incluye techo (6).",
+        "c2": "Calamina metálica, fibrocemento sobre viguería metálica. Bambú.",
+        "c3": "Parquet de 1a, lajas, cerámica nacional, loseta veneciana 40×40 cm, piso laminado.",
+        "c4": "Ventanas de aluminio, puertas de madera selecta, vidrio tratado transparente (3).",
+        "c5": "Enchape de madera o laminados, piedra o material vitrificado.",
+        "c6": "Baños completos (7) nacionales blancos con mayólica blanca.",
+        "c7": "Agua fría, agua caliente, corriente trifásica, teléfono, gas natural."
+      }
+    },
+    {
+      "key": "E",
+      "label": "E",
+      "values": {
+        "c1": 196.26,
+        "c2": 50.32,
+        "c3": 81.23,
+        "c4": 90.01,
+        "c5": 112.53,
+        "c6": 21.21,
+        "c7": 79.63
+      },
+      "descriptions": {
+        "c1": "Adobe, tapial o quincha. Bambú estructural.",
+        "c2": "Madera con material impermeabilizante. Policarbonato.",
+        "c3": "Parquet de 2da, loseta veneciana 30×30 cm, lajas de cemento con canto rodado.",
+        "c4": "Ventanas de fierro, puertas de madera selecta (caoba o similar), vidrio transparente (4).",
+        "c5": "Superficie de ladrillo caravista.",
+        "c6": "Baños con mayólica blanca, parcial.",
+        "c7": "Agua fría, agua caliente, corriente monofásica, teléfono, gas natural."
+      }
+    },
+    {
+      "key": "F",
+      "label": "F",
+      "values": {
+        "c1": 147.81,
+        "c2": 27.67,
+        "c3": 55.47,
+        "c4": 67.57,
+        "c5": 79.47,
+        "c6": 15.81,
+        "c7": 45.55
+      },
+      "descriptions": {
+        "c1": "Madera (estoraque, pumaquiro, huayruro, machinga, catahua amarilla, copaiba, dibo fuerte, tornillo o similares). Drywall o similar (sin techo).",
+        "c2": "Calamina metálica, fibrocemento o teja sobre viguería de madera corriente.",
+        "c3": "Loseta corriente, canto rodado, alfombra.",
+        "c4": "Ventanas de fierro o aluminio industrial; puertas contraplacadas de madera (cedro o similar); puertas MDF/HDF; vidrio simple transparente (4).",
+        "c5": "Tarrajeo frotachado y/o yeso moldurado, pintura lavable.",
+        "c6": "Baños blancos sin mayólica.",
+        "c7": "Agua fría, corriente monofásica, gas natural."
+      }
+    },
+    {
+      "key": "G",
+      "label": "G",
+      "values": {
+        "c1": 87.09,
+        "c2": 19.03,
+        "c3": 48.96,
+        "c4": 36.5,
+        "c5": 65.16,
+        "c6": 10.87,
+        "c7": 42.26
+      },
+      "descriptions": {
+        "c1": "Pircado con mezcla de barro.",
+        "c2": "Madera rústica o caña con torta de barro.",
+        "c3": "Loseta vinílica, cemento bruñado coloreado, tapizón.",
+        "c4": "Madera corriente con marcos en puertas y ventanas de PVC o madera corriente.",
+        "c5": "Estucado de yeso y/o barro, pintura al temple o al agua.",
+        "c6": "Sanitarios básicos de losa de 2da, fierro fundido o granito.",
+        "c7": "Agua fría, corriente monofásica, teléfono."
+      }
+    },
+    {
+      "key": "H",
+      "label": "H",
+      "values": {
+        "c1": null,
+        "c2": 0.0,
+        "c3": 30.63,
+        "c4": 18.25,
+        "c5": 26.06,
+        "c6": 0.0,
+        "c7": 22.82
+      },
+      "descriptions": {
+        "c1": "—",
+        "c2": "Sin techo.",
+        "c3": "Cemento pulido, ladrillo corriente, entablado corriente, concreto o similar.",
+        "c4": "Madera rústica.",
+        "c5": "Pintado en ladrillo rústico, placa de concreto o similar.",
+        "c6": "Sin aparatos sanitarios.",
+        "c7": "Agua fría, corriente monofásica sin empotrar."
+      }
+    },
+    {
+      "key": "I",
+      "label": "I",
+      "values": {
+        "c1": null,
+        "c2": null,
+        "c3": 6.13,
+        "c4": 0.0,
+        "c5": 0.0,
+        "c6": null,
+        "c7": 0.0
+      },
+      "descriptions": {
+        "c1": "—",
+        "c2": "—",
+        "c3": "Tierra compactada.",
+        "c4": "Sin puertas ni ventanas.",
+        "c5": "Sin revestimientos en ladrillo, adobe o similar.",
+        "c6": "—",
+        "c7": "Sin instalación eléctrica ni sanitaria."
+      }
+    }
+  ],
+  "footnotes": [
+    {
+      "id": "1",
+      "text": "Referido al doble vidriado hermético, con propiedades de aislamiento térmico y acústico."
+    },
+    {
+      "id": "2",
+      "text": "Referido al vidrio que recibe tratamiento para incrementar su resistencia mecánica y propiedades de aislamiento acústico y térmico, con colores en su masa (visibilidad aprox. 14%–83%)."
+    },
+    {
+      "id": "3",
+      "text": "Referido al vidrio que recibe tratamiento para incrementar su resistencia mecánica y propiedades de aislamiento acústico y térmico; permite visibilidad aprox. 75%–92%."
+    },
+    {
+      "id": "4",
+      "text": "Referido al vidrio primario sin tratamiento; permite transmisión de visibilidad aprox. 75%–92%."
+    },
+    {
+      "id": "5",
+      "text": "Sistema de bombeo de agua y desagüe (instalaciones interiores subterráneas y aéreas) que forman parte integrante de la edificación."
+    },
+    {
+      "id": "6",
+      "text": "Para este caso no se considera la columna N°2."
+    },
+    {
+      "id": "7",
+      "text": "Se considera mínimo lavatorio, inodoro y ducha o tina."
+    }
+  ]
+}

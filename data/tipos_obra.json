@@ -1,0 +1,398 @@
+{
+  "groups": [
+    {
+      "group_code": "1.00",
+      "group_name": "Vivienda",
+      "items": [
+        {
+          "code": "1.01",
+          "name": "En serie"
+        },
+        {
+          "code": "1.02",
+          "name": "Unifamiliar / Bifamiliar"
+        },
+        {
+          "code": "1.03",
+          "name": "Multifam. (planta tip.) / Quintas / Conj. / etc."
+        },
+        {
+          "code": "1.04",
+          "name": "Multifam. (planta dif.)"
+        }
+      ]
+    },
+    {
+      "group_code": "2.00",
+      "group_name": "Educación",
+      "items": [
+        {
+          "code": "2.01",
+          "name": "Guardería y cunas"
+        },
+        {
+          "code": "2.02",
+          "name": "Centros de educ. inicial / básica / SEP"
+        },
+        {
+          "code": "2.03",
+          "name": "Centros de educ. superior / universidad"
+        },
+        {
+          "code": "2.04",
+          "name": "Institutos de investigación, edif. especial"
+        },
+        {
+          "code": "2.05",
+          "name": "Observatorios"
+        },
+        {
+          "code": "2.06",
+          "name": "Biblioteca sencilla"
+        },
+        {
+          "code": "2.07",
+          "name": "Biblioteca compleja"
+        }
+      ]
+    },
+    {
+      "group_code": "3.00",
+      "group_name": "Comercio",
+      "items": [
+        {
+          "code": "3.01",
+          "name": "Centro comercial"
+        },
+        {
+          "code": "3.02",
+          "name": "Edificio de oficinas (planta típica)"
+        },
+        {
+          "code": "3.03",
+          "name": "Edificio de oficinas (plantas diferentes)"
+        },
+        {
+          "code": "3.04",
+          "name": "Mercados / ferias permanentes"
+        },
+        {
+          "code": "3.05",
+          "name": "Ferias temporales"
+        },
+        {
+          "code": "3.06",
+          "name": "Bancos / financieras"
+        },
+        {
+          "code": "3.07",
+          "name": "Tiendas (sin decoración)"
+        }
+      ]
+    },
+    {
+      "group_code": "4.00",
+      "group_name": "Salud",
+      "items": [
+        {
+          "code": "4.01",
+          "name": "Hospitales especializados"
+        },
+        {
+          "code": "4.02",
+          "name": "Hospital general / clínicas"
+        },
+        {
+          "code": "4.03",
+          "name": "Centro de salud / policlínico"
+        },
+        {
+          "code": "4.04",
+          "name": "Consultorios"
+        },
+        {
+          "code": "4.05",
+          "name": "Laboratorios de análisis clínicos"
+        }
+      ]
+    },
+    {
+      "group_code": "5.00",
+      "group_name": "Turismo",
+      "items": [
+        {
+          "code": "5.01",
+          "name": "Hotel 5 estrellas"
+        },
+        {
+          "code": "5.02",
+          "name": "Hotel 4, 3, 2, 1 estrellas"
+        },
+        {
+          "code": "5.03",
+          "name": "Hostales, h. residencial / pensiones"
+        },
+        {
+          "code": "5.04",
+          "name": "Moteles y cabañas"
+        },
+        {
+          "code": "5.05",
+          "name": "Centros vacacionales"
+        },
+        {
+          "code": "5.06",
+          "name": "Restaurant y cafeterías de lujo"
+        },
+        {
+          "code": "5.07",
+          "name": "Restaurant y cafeterías económicas"
+        },
+        {
+          "code": "5.08",
+          "name": "Casinos"
+        },
+        {
+          "code": "5.09",
+          "name": "Discotecas / bares / tabernas"
+        },
+        {
+          "code": "5.10",
+          "name": "Salón de baile y recreo"
+        }
+      ]
+    },
+    {
+      "group_code": "6.00",
+      "group_name": "Culturales",
+      "items": [
+        {
+          "code": "6.01",
+          "name": "Teatros"
+        },
+        {
+          "code": "6.02",
+          "name": "Cine / auditorios de usos múltiples"
+        },
+        {
+          "code": "6.03",
+          "name": "Centro cultural múltiple"
+        },
+        {
+          "code": "6.04",
+          "name": "Sala de conciertos"
+        },
+        {
+          "code": "6.05",
+          "name": "Museo (edif. especial)"
+        },
+        {
+          "code": "6.06",
+          "name": "Museo"
+        },
+        {
+          "code": "6.07",
+          "name": "Galería de arte"
+        },
+        {
+          "code": "6.08",
+          "name": "Anfiteatros al aire libre"
+        }
+      ]
+    },
+    {
+      "group_code": "7.00",
+      "group_name": "Culto",
+      "items": [
+        {
+          "code": "7.01",
+          "name": "Centro parroquial"
+        },
+        {
+          "code": "7.02",
+          "name": "Templos < 1,000 m² (capillas, etc.)"
+        },
+        {
+          "code": "7.03",
+          "name": "Templos > 1,000 m² (catedrales, etc.)"
+        },
+        {
+          "code": "7.04",
+          "name": "Conventos y seminarios"
+        },
+        {
+          "code": "7.05",
+          "name": "Edificios religiosos residencias"
+        },
+        {
+          "code": "7.06",
+          "name": "Cementerios / velatorios"
+        }
+      ]
+    },
+    {
+      "group_code": "8.00",
+      "group_name": "Edificios públicos",
+      "items": [
+        {
+          "code": "8.01",
+          "name": "Ministerio / entidades públicas y oficiales"
+        },
+        {
+          "code": "8.02",
+          "name": "Municipalidades / juzgados"
+        },
+        {
+          "code": "8.03",
+          "name": "Embajadas"
+        },
+        {
+          "code": "8.04",
+          "name": "Comisarías / cuartel de bomberos / serv. postal"
+        }
+      ]
+    },
+    {
+      "group_code": "9.00",
+      "group_name": "Asistencia social",
+      "items": [
+        {
+          "code": "9.01",
+          "name": "Asilo, residencias de ancianos, huérfanos"
+        },
+        {
+          "code": "9.02",
+          "name": "Establecimientos correccionales"
+        },
+        {
+          "code": "9.03",
+          "name": "Comedores populares"
+        }
+      ]
+    },
+    {
+      "group_code": "10.00",
+      "group_name": "Industria y agro-industria",
+      "items": [
+        {
+          "code": "10.01",
+          "name": "Fábricas"
+        },
+        {
+          "code": "10.02",
+          "name": "Talleres / almacenes / depósitos"
+        },
+        {
+          "code": "10.03",
+          "name": "Granjas / invernaderos"
+        },
+        {
+          "code": "10.04",
+          "name": "Frigoríficos / camales"
+        },
+        {
+          "code": "10.05",
+          "name": "Imprentas / afines"
+        }
+      ]
+    },
+    {
+      "group_code": "11.00",
+      "group_name": "Transportes y comunicaciones",
+      "items": [
+        {
+          "code": "11.01",
+          "name": "Terminal terrestre y ferroviario"
+        },
+        {
+          "code": "11.02",
+          "name": "Terminal marítimo, fluvial, lacustre"
+        },
+        {
+          "code": "11.03",
+          "name": "Terminal aéreo"
+        },
+        {
+          "code": "11.04",
+          "name": "Puentes / intercambios"
+        },
+        {
+          "code": "11.05",
+          "name": "Edif. estudios de TV / radios / otros"
+        },
+        {
+          "code": "11.06",
+          "name": "Estacionamientos a nivel c/techo ligero"
+        },
+        {
+          "code": "11.07",
+          "name": "Estacionamientos en edificio"
+        }
+      ]
+    },
+    {
+      "group_code": "12.00",
+      "group_name": "Recreación y deportes",
+      "items": [
+        {
+          "code": "12.01",
+          "name": "Estadios / hipódromos / coliseos / plazas de toros"
+        },
+        {
+          "code": "12.02",
+          "name": "Complejo deportivo / clubes"
+        },
+        {
+          "code": "12.03",
+          "name": "Instalaciones deportivas al aire libre"
+        },
+        {
+          "code": "12.04",
+          "name": "Instalaciones deportivas techadas"
+        },
+        {
+          "code": "12.05",
+          "name": "Juegos infantiles / parques de diversión"
+        },
+        {
+          "code": "12.06",
+          "name": "Gimnasios"
+        },
+        {
+          "code": "12.07",
+          "name": "Zoológicos"
+        },
+        {
+          "code": "12.08",
+          "name": "Piscinas"
+        },
+        {
+          "code": "12.09",
+          "name": "Baños turcos / saunas"
+        }
+      ]
+    },
+    {
+      "group_code": "14.00",
+      "group_name": "Otros",
+      "items": [
+        {
+          "code": "14.01",
+          "name": "Baños públicos"
+        },
+        {
+          "code": "14.02",
+          "name": "Jardinería con riego por manguera"
+        },
+        {
+          "code": "14.03",
+          "name": "Jardinería con riego por aspersión"
+        },
+        {
+          "code": "14.04",
+          "name": "Monumentos y obras similares"
+        }
+      ]
+    }
+  ]
+}
